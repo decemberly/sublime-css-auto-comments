@@ -21,22 +21,20 @@ Just download this repositry and dump the folder in the Sublime Packages folder
 Say you have some masterful CSS like this
 
 ```css
-button{
-  background: #006dcc;
-  font-size: 18px;
-  color: #eee;
-  border: 1px solid rgba(0,0,0,0.5);
-  border-radius: 3px;
-  padding: 10px;
-  box-shadow: -3px -21px 21px -9px rgba(0,0,0,0.4) inset;
+button {
+  background: black;
+  color: white;
+  border-radius: 0.2em;
+  padding: 1em;
 }
-button.active{
+
+button.active {
   background: maroon;
 }
 
-button:disabled{
-  background: #aaa;
-  color: #777;
+button:disabled {
+  background: grey;
+  color: black;
 }
 ````
 
@@ -44,22 +42,20 @@ Just do this
 
 ```css
 ///[tab]
-button{
-  background: #006dcc;
-  font-size: 18px;
-  color: #eee;
-  border: 1px solid rgba(0,0,0,0.5);
-  border-radius: 3px;
-  padding: 10px;
-  box-shadow: -3px -21px 21px -9px rgba(0,0,0,0.4) inset;
+button {
+  background: black;
+  color: white;
+  border-radius: 0.2em;
+  padding: 1em;
 }
-button.active{
+
+button.active {
   background: maroon;
 }
 
-button:disabled{
-  background: #aaa;
-  color: #777;
+button:disabled {
+  background: grey;
+  color: black;
 }
 ````
 
