@@ -194,6 +194,9 @@ class CssautocommentsCommand(sublime_plugin.TextCommand):
 		self.view.insert(edit, self.getCursor().begin(), '// ' + cssName[2:].title() + '\n')
 		self.view.insert(edit, self.getCursor().begin(), '// \n')
 		self.view.insert(edit, self.getCursor().begin(), '// Style for the ' + cssName + ' ' + cssType + '\n')
+		
+		if(relatedCss):
+			self.view.insert(edit, self.getCursor().begin(), '// \n')
 
 		for i in range(0, len(relatedCss)):
 			self.view.insert(edit, self.getCursor().begin(), '// ' + relatedCss[i] + ' - ' + relatedCss[i].replace("."," ").replace(":"," ")[1:] + ' state\n')
