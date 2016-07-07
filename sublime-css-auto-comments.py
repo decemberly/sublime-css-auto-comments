@@ -180,13 +180,6 @@ class CssautocommentsCommand(sublime_plugin.TextCommand):
 		if cssAttrs:
 			cssAttrs = ' ' + cssAttrs
 
-		if(cssType == 'class'):
-			markup = '<div class="' + cssName + cssAttrs + '">markup</div>'
-		elif(cssType == 'id'):
-			markup = '<div id="' + cssName + cssAttrs + '">markup</div>'
-		elif(cssType == 'element'):
-			markup = '<' + cssName + cssAttrs + '>Markup</' + cssName + '>'
-
 
 		# replace the current cursor with a comment block and auto fill in all the attributes
 		cursor =  self.getCursor()
@@ -201,7 +194,6 @@ class CssautocommentsCommand(sublime_plugin.TextCommand):
 		for i in range(0, len(relatedCss)):
 			self.view.insert(edit, self.getCursor().begin(), '// ' + relatedCss[i] + ' - ' + relatedCss[i].replace("."," ").replace(":"," ")[1:] + ' state\n')
 		self.view.insert(edit, self.getCursor().begin(), '// \n')
-		self.view.insert(edit, self.getCursor().begin(), '// Markup:\n')
-		self.view.insert(edit, self.getCursor().begin(), '//   ' + markup + '\n')
+		self.view.insert(edit, self.getCursor().begin(), '// Markup: ' + cssName[2:] + '.twig\n')
 		self.view.insert(edit, self.getCursor().begin(), '// \n')
 		self.view.insert(edit, self.getCursor().begin(), '// Style guide: ' + cssName[2:])
